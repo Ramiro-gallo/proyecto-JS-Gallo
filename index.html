@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorías</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <p>Kcalc.</p>
+    </header>
+    <button id="darkModeToggle" type="button" aria-label="toggle dark mode"><i id="darkModeToggleIcon" class="fa-solid fa-moon"></i></button>
+    <section>
+        <div class="calc-body">
+            <h1>Calculadora de Calorías.</h1>
+            <form action="">
+                <label>Por favor, ingresá tu nombre.<br>
+                    <input type="text" required placeholder="Nombre...">
+                </label>
+                <label>
+                    Por favor, seleccioná la fórmula que quieras utilizar.<br>
+                    <select name="equationSelect" id="equationSelect" required>
+                        <option selected disabled>Seleccionar fórmula</option>
+                        <option value="">Harris-Benedict</option>
+                        <option value="">Harris-Benedict Revisada</option>
+                        <option value="">Mifflin St Jeor</option>
+                    </select>
+                </label>
+                <label>Por favor, seleccioná tu sexo biológico.<br>
+                    <select name="" id="" required>
+                        <option selected disabled>Seleccionar</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                    </select>
+                </label>
+                <label>
+                    Por favor, ingresá tu peso en kg.<br>
+                    <input type="number" min="10" max="400" required placeholder="Peso(kg)...">
+                </label>
+                <label>
+                    Por favor, ingresá tu altura en cm.<br>
+                    <input type="number" min="110" max="230" required placeholder="Altura(cm)...">
+                </label>
+                <label>
+                    Por favor, ingresá tu edad.<br>
+                    <input type="number" min="5" max="100" required placeholder="Edad...">
+                </label>
+                <label>
+                    Por favor, seleccioná la opción que más se adecúa a tu estilo de vida.<br>
+                    <select name="" id="actMultSelect" required>
+                        <option selected disabled>Seleccionar</option>
+                        <option value="">Sedentario</option>
+                        <option value="">Levemente activo</option>
+                        <option value="">Medianamente activo</option>
+                        <option value="">Considerablemente activo</option>
+                        <option value="">Extremadamente activo</option>
+                        <p id="results"></p>
+                    </select>
+                </label>
+                <button type="submit" id="calcular">Calcular.</button>
+            </form>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/8898244d6b.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
