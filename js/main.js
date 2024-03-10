@@ -26,6 +26,25 @@ darkModeToggle.addEventListener("click", () => {
     }
 })
 
+// testeo variables usuario:
+
+let weight = 80;
+let height = 180;
+let age = 22;
+let selectedFormula = 1;
+
+// linkeo variables con DOM:
+
+
+
+
+
+
+
+
+
+
+
 // declaración de datos de fórmulas: 
 
 const formulas = [
@@ -66,13 +85,6 @@ const formulas = [
     resto: -161 ,
     },
 ]
-
-// testeo variables usuario:
-
-let weight = 80;
-let height = 180;
-let age = 22;
-let selectedFormula = 1;
 
 // función de cálculo:
 
