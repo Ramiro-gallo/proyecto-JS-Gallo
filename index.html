@@ -14,21 +14,18 @@
     <section>
         <div class="calc-body">
             <h1>Calculadora de Calorías.</h1>
-            <form action="">
-                <label>Por favor, ingresá tu nombre.<br>
-                    <input type="text" required placeholder="Nombre...">
-                </label>
+            <form action="" onsubmit="CalcBMR();return false">
                 <label>
                     Por favor, seleccioná la fórmula que quieras utilizar.<br>
                     <select name="equationSelect" id="equationSelect" required>
                         <option selected disabled>Seleccionar fórmula</option>
-                        <option value="">Harris-Benedict</option>
-                        <option value="">Harris-Benedict Revisada</option>
-                        <option value="">Mifflin St Jeor</option>
+                        <option value="harris-benedict">Harris-Benedict</option>
+                        <option value="harris-benedict-r">Harris-Benedict Revisada</option>
+                        <option value="mifflin-st-jeor">Mifflin St Jeor</option>
                     </select>
                 </label>
                 <label>Por favor, seleccioná tu sexo biológico.<br>
-                    <select name="" id="" required>
+                    <select name="genderSelect" id="genderSelect" required>
                         <option selected disabled>Seleccionar</option>
                         <option value="masculino">Masculino</option>
                         <option value="femenino">Femenino</option>
@@ -36,19 +33,19 @@
                 </label>
                 <label>
                     Por favor, ingresá tu peso en kg.<br>
-                    <input type="number" min="10" max="400" required placeholder="Peso(kg)...">
+                    <input id="weight" type="number" min="10" max="400" required placeholder="Peso(kg)...">
                 </label>
                 <label>
                     Por favor, ingresá tu altura en cm.<br>
-                    <input type="number" min="110" max="230" required placeholder="Altura(cm)...">
+                    <input id="height" type="number" min="110" max="230" required placeholder="Altura(cm)...">
                 </label>
                 <label>
                     Por favor, ingresá tu edad.<br>
-                    <input type="number" min="5" max="100" required placeholder="Edad...">
+                    <input id="age" type="number" min="5" max="100" required placeholder="Edad...">
                 </label>
                 <label>
                     Por favor, seleccioná la opción que más se adecúa a tu estilo de vida.<br>
-                    <select name="" id="actMultSelect" required>
+                    <select name="activityMultiplier" id="activityMultiplierSelect" required>
                         <option selected disabled>Seleccionar</option>
                         <option value="">Sedentario</option>
                         <option value="">Levemente activo</option>

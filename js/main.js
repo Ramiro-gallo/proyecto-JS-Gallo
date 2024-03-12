@@ -26,23 +26,21 @@ darkModeToggle.addEventListener("click", () => {
     }
 })
 
-// testeo variables usuario:
+// declaración variables usuario:
 
-let weight = 80;
-let height = 180;
-let age = 22;
-let selectedFormula = 1;
+let selectedFormula = 1 ;
 
 // linkeo variables con DOM:
 
+let formula = document.getElementById("equationSelect").value;
 
+let gender = document.getElementById("genderSelect").value;
 
+let weight = document.getElementById("weight").value;
 
+let height = document.getElementById("height").value;
 
-
-
-
-
+let age = document.getElementById("age").value;
 
 
 // declaración de datos de fórmulas: 
@@ -92,5 +90,3 @@ function CalcBMR() {
     let BMR = (weight*(formulas[selectedFormula].weightMultiplier)) + (height*(formulas[selectedFormula].heightMultiplier)) - (age*(formulas[selectedFormula].ageMultiplier)) + (formulas[selectedFormula].resto);
     return BMR;    
 }
-console.log(CalcBMR());
-
