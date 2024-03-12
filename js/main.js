@@ -78,10 +78,6 @@ let selectedFormula = 1 ;
 
 // función de cálculo:
 
-function calcBMR() {
-    let BMR = (weight*(formulas[selectedFormula].weightMultiplier)) + (height*(formulas[selectedFormula].heightMultiplier)) - (age*(formulas[selectedFormula].ageMultiplier)) + (formulas[selectedFormula].resto);
-    return BMR;    
-}
 
 // linkeo variables con DOM:
 
@@ -100,7 +96,14 @@ formulario.addEventListener('submit', function(e){
 
     let age = document.getElementById('ageinput').value;
 
-    calcBMR();
+    
+    function calcBMR() {
+        let BMR = (weight*(formulas[selectedFormula].weightMultiplier)) + (height*(formulas[selectedFormula].heightMultiplier)) - (age*(formulas[selectedFormula].ageMultiplier)) + (formulas[selectedFormula].resto);
+        return BMR;    
+    }
+
+    let BMR = calcBMR();
+    console.log("BMR:" + BMR);
 })
 
 
