@@ -14,7 +14,7 @@
     <section>
         <div class="calc-body">
             <h1>Calculadora de Calorías.</h1>
-            <form action="" onsubmit="CalcBMR();return false">
+            <form id="form" action="">
                 <label>
                     Por favor, seleccioná la fórmula que quieras utilizar.<br>
                     <select name="equationSelect" id="equationSelect" required>
@@ -33,19 +33,19 @@
                 </label>
                 <label>
                     Por favor, ingresá tu peso en kg.<br>
-                    <input id="weight" type="number" min="10" max="400" required placeholder="Peso(kg)...">
+                    <input id="weightinput" type="number" min="10" max="400" required placeholder="Peso(kg)...">
                 </label>
                 <label>
                     Por favor, ingresá tu altura en cm.<br>
-                    <input id="height" type="number" min="110" max="230" required placeholder="Altura(cm)...">
+                    <input id="heightinput" type="number" min="110" max="230" required placeholder="Altura(cm)...">
                 </label>
                 <label>
                     Por favor, ingresá tu edad.<br>
-                    <input id="age" type="number" min="5" max="100" required placeholder="Edad...">
+                    <input id="ageinput" type="number" min="5" max="100" required placeholder="Edad...">
                 </label>
                 <label>
                     Por favor, seleccioná la opción que más se adecúa a tu estilo de vida.<br>
-                    <select name="activityMultiplier" id="activityMultiplierSelect" required>
+                    <select name="activitymultiplierinput" id="activitymultiplierinput" required>
                         <option selected disabled>Seleccionar</option>
                         <option value="">Sedentario</option>
                         <option value="">Levemente activo</option>
