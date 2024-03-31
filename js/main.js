@@ -26,47 +26,24 @@ darkModeToggle.addEventListener("click", () => {
     }
 })
 
+// fetch data formulas
 
-// declaración de datos de fórmulas: 
+let formulas;
 
-const formulas = [
-    {name: "harris-benedict-men",
-    weightMultiplier: 13.75 ,
-    heightMultiplier: 5.003 ,
-    ageMultiplier: 6.775 , 
-    resto: 66.5 ,
-    },
-    {name: "harris-benedict-women",
-    weightMultiplier: 9.563 ,
-    heightMultiplier: 1.850 ,
-    ageMultiplier: 4.676 , 
-    resto: 655.1 ,
-    },
-    {name: "harris-benedict-revised-men",
-    weightMultiplier: 13.397 ,
-    heightMultiplier: 4.799 ,
-    ageMultiplier: 5.677 , 
-    resto: 88.362 ,
-    },
-    {name: "harris-benedict-revised-women",
-    weightMultiplier: 9.247 ,
-    heightMultiplier: 3.098 ,
-    ageMultiplier: 4.330 , 
-    resto: 447.593 ,
-    },
-    {name: "mifflin-st-jeor-men",
-    weightMultiplier: 10 ,
-    heightMultiplier: 6.25 ,
-    ageMultiplier: 5 , 
-    resto: 5 ,
-    },
-    {name: "mifflin-st-jeor-women",
-    weightMultiplier: 10 ,
-    heightMultiplier: 6.25 ,
-    ageMultiplier: 5 , 
-    resto: -161 ,
-    },
-]
+async function getData(url) {
+    const response = await fetch(url);
+    
+    return response.json();
+}
+
+
+async function getFormulas(){ 
+    const formulasJSON = await getData('./JSON/formulas.json');
+
+    formulas = formulasJSON;    
+}   
+
+getFormulas();
 
 // linkeo variables con DOM:
 
@@ -138,7 +115,7 @@ formulario.addEventListener('submit', function(e){
         if(isNaN(dailyIntake)){
             resultados.innerHTML = ("Por favor, no olvides ingresar todos los datos necesarios ni seleccionar todas las opciones correspondientes para poder completar el cálculo.");
         } else {
-            resultados.innerHTML = ("Tu gasto total de energía diario (TDEE) es de aproximadamente " + dailyIntake + "kcal.<br>Esto significa que, según los parámetros ingresados, gastas alrededor de " + dailyIntake + " calorías por día. Si tu deseo es mantener tu peso, deberías consumir esta cantidad de calorías diarias.<br>Contrariamente, si quieres bajar de peso, lo ideal sería que consumas entre " + (dailyIntake - 300) + " y " + (dailyIntake - 500) + " calorías por día.<br>Si quieres subir de peso, lo ideal sería que consumas entre " + (dailyIntake + 300) + " y " + (dailyIntake + 500) + " calorías por día.");
+            resultados.innerHTML = ("Tu gasto total de energía diario (TDEE) es de aproximadamente " + dailyIntake + "kcal.<br>Esto significa que, según los parámetros ingresados, gastas alrededor de " + dailyIntake + " calorías por día. Si tu deseo es mantener tu peso, deberías consumir esta cantidad de calorías diarias.<br>Si quieres bajar de peso, lo ideal sería que consumas entre " + (dailyIntake - 500) + " y " + (dailyIntake - 300) + " calorías por día.<br>Contrariamente, si quieres subir de peso, lo ideal sería que consumas entre " + (dailyIntake + 300) + " y " + (dailyIntake + 500) + " calorías por día.");
         }
 
     }
