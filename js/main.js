@@ -73,7 +73,12 @@ formulario.addEventListener('submit', function(e){
     } else if (formulaSelect === "mifflin-st-jeor" && gender === "femenino") {
         selectedFormula = 5;
     } else {
-        selectedFormula = "ERR";
+        Swal.fire({
+            title: 'Error!',
+            text: 'Por favor, no olvides ingresar todos los datos necesarios ni seleccionar todas las opciones correspondientes para poder completar el cálculo.',
+            icon: 'error',
+            confirmButtonText: 'Volver a intentar'
+          });
     }
 
     // linkeo de variables de cálculo de la fórmula con inputs del form:
@@ -113,14 +118,19 @@ formulario.addEventListener('submit', function(e){
         resultados.style.visibility = "visible";
 
         if(isNaN(dailyIntake)){
-            resultados.innerHTML = ("Por favor, no olvides ingresar todos los datos necesarios ni seleccionar todas las opciones correspondientes para poder completar el cálculo.");
+            Swal.fire({
+                title: 'Error!',
+                text: 'Por favor, no olvides ingresar todos los datos necesarios ni seleccionar todas las opciones correspondientes para poder completar el cálculo.',
+                icon: 'error',
+                confirmButtonText: 'Volver a intentar'
+              });
         } else {
             resultados.innerHTML = ("Tu gasto total de energía diario (TDEE) es de aproximadamente " + dailyIntake + "kcal.<br>Esto significa que, según los parámetros ingresados, gastas alrededor de " + dailyIntake + " calorías por día. Si tu deseo es mantener tu peso, deberías consumir esta cantidad de calorías diarias.<br>Si quieres bajar de peso, lo ideal sería que consumas entre " + (dailyIntake - 500) + " y " + (dailyIntake - 300) + " calorías por día.<br>Contrariamente, si quieres subir de peso, lo ideal sería que consumas entre " + (dailyIntake + 300) + " y " + (dailyIntake + 500) + " calorías por día.");
         }
 
     }
 
-    showResults();
+    showResults(); 
 })
 
 
