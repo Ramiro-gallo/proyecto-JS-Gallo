@@ -1,6 +1,6 @@
 :root{
     /* declaraciones primarias */
-    --ff-primary: Arial, Helvetica, sans-serif;
+    --ff-primary: 'Open Sans', sans-serif;
     --font-size-regular: 16px;
     --neutral-color-light: #F2F7F7;
     --neutral-color:#E2F1F3;
@@ -39,11 +39,14 @@
     border: 0;
     box-sizing: border-box;
     font-size: var(--font-size-regular);
+    font-weight: 200;
 }
 body{
     background-color: var(--background-color);
     color: var(--text-color);
     transition: .75s;
+    width: 100vw;
+    height: 100vh;
 }
 body > *{
     transition: 250ms;
@@ -69,8 +72,9 @@ body > *{
 }
 h1{
     text-align: center;
-    padding: 2rem 0 3rem;
+    padding: 2rem 0 2.5rem;
     font-size: 1.75rem;
+    font-weight: 500;
 }
 .calc-body{
     width: 80%;
@@ -106,7 +110,7 @@ input, select{
     border: var(--button-color) 1px solid;
     color: var(--button-text-color);
     text-align: center;
-    font-weight: bold;
+    font-weight: 500;
     transition: 350ms;
 }
 #calcular:hover{
@@ -114,20 +118,6 @@ input, select{
     color: var(--button-text-hover-color);
     cursor: pointer;
 }
-header{
-    height: 50px;
-    background-color: var(--calc-body-color);  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header p{
-    text-decoration:underline;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bolder;
-    font-size: larger;
-}
-
 #results {
     visibility: hidden;
 }
