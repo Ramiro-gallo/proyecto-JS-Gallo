@@ -12,6 +12,7 @@
     --accent-color-light:#EB7C33;
     --accent-color:#EE561E;
     --accent-color-dark:#D14310;
+    --box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
     /* declaraciones secundarias */
     --dark-mode-toggle-button-bg: var(--main-color-dark);
     --dark-mode-toggle-button-bg-hover: var(--main-color-darkest);
@@ -90,16 +91,23 @@ h1{
     padding: 2rem 0 2.5rem;
     font-size: 1.8rem;
     font-weight: 500;
+    letter-spacing: .02rem;
 }
 .calc-body{
     width: 80%;
     max-width: 600px;
-    margin: 5rem auto;
+    margin: 5rem auto 0;
     padding: 2rem;
     background-color: var(--calc-body-color);
     border-radius: .8rem;
     display: flex;
     flex-direction: column;
+    /* box-shadow: var(--box-shadow); */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.filler{
+    background-color: transparent;
+    height: 5rem;
 }
 @media only screen and (max-width: 576px) {
     .calc-body{
@@ -108,9 +116,13 @@ h1{
         margin: 0;
         border-radius: 0;
         padding: 2.5rem;
+        box-shadow: none;
     }
     #darkModeToggle{
         padding: .6rem .8rem;
+    }
+    .filler{
+        display: none;
     }
 }
 form{
@@ -131,9 +143,10 @@ input, select{
     border: 1px solid var(--input-bg-color);
     border-radius: .3rem;
     color: var(--text-color);
+    box-shadow: var(--box-shadow);
 }
 #calcular{
-    margin: 1.5rem 0 .5rem;
+    margin: 1.5rem 0;
     padding: .75rem 0;
     border-radius: .3rem;
     background-color: transparent;
@@ -142,6 +155,7 @@ input, select{
     text-align: center;
     font-weight: 600;
     transition: 350ms;
+    box-shadow: var(--box-shadow);
 }
 #calcular:hover{
     background-color:var(--button-color);
@@ -150,4 +164,5 @@ input, select{
 }
 #results {
     visibility: hidden;
+    font-weight: 400;
 }
