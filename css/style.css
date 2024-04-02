@@ -13,6 +13,9 @@
     --accent-color:#EE561E;
     --accent-color-dark:#D14310;
     /* declaraciones secundarias */
+    --dark-mode-toggle-button-bg: var(--main-color-dark);
+    --dark-mode-toggle-button-bg-hover: var(--main-color-darkest);
+    --moon-color: var(--main-color-light);
     --background-color: var(--main-color-light);
     --calc-body-color: var(--main-color);
     --button-color: var(--accent-color);
@@ -53,27 +56,32 @@ body > *{
 }
 #darkModeToggle{
     z-index: 999;
-    background-color: var(--main-color-dark);
+    background-color: var(--dark-mode-toggle-button-bg);
     border-radius: 100%;
     padding: .8rem 1rem;
     cursor: pointer;
     position: fixed;
-    right: 8px;
-    bottom: 20px;
+    right: 3%;
+    bottom: 3%;
     transition:350ms;
 }
 #darkModeToggle:hover{
-    background-color: var(--main-color-darkest);
+    background-color: var(--dark-mode-toggle-button-bg-hover);
     transform: rotate(20deg);
 }
 #darkModeToggle i{
     font-size: 1.8rem;
-    color: var(--main-color-light);
+    color: var(--moon-color);
+}
+.dark-mode-toggle-light{
+    --dark-mode-toggle-button-bg: var(--neutral-color);
+    --dark-mode-toggle-button-bg-hover: var(--neutral-color-light);
+    --moon-color: var(--main-color-darkest);
 }
 h1{
     text-align: center;
     padding: 2rem 0 2.5rem;
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     font-weight: 500;
 }
 .calc-body{
