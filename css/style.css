@@ -16,14 +16,14 @@
     --dark-mode-toggle-button-bg: var(--main-color-dark);
     --dark-mode-toggle-button-bg-hover: var(--main-color-darkest);
     --moon-color: var(--main-color-light);
-    --background-color: var(--main-color-light);
-    --calc-body-color: var(--main-color);
+    --background-color: var(--main-color);
+    --calc-body-color: var(--main-color-light);
     --button-color: var(--accent-color);
     --button-color-hover:var(--accent-color-light);
-    --button-text-color:var(--neutral-color-light);
-    --button-text-hover-color:var(--neutral-color-dark);
+    --button-text-color:var(--accent-color);
+    --button-text-hover-color:var(--neutral-color-light);
     --text-color: var(--neutral-color-dark);
-    --input-bg-color: var(--neutral-color-light);
+    --input-bg-color: var(--main-color-darkest);
 }
 .dark-mode{
     --background-color: var(--main-color-dark);
@@ -31,7 +31,7 @@
     --text-color: var(--neutral-color);
     --button-color: var(--accent-color);
     --button-color-hover:var(--accent-color-dark);
-    --button-text-color:var(--neutral-color);
+    --button-text-color:var(--accent-color);
     --button-text-hover-color:var(--neutral-color);
     --input-bg-color:var(--main-color-light);
 }
@@ -44,6 +44,9 @@
     font-size: var(--font-size-regular);
     font-weight: 200;
 }
+::placeholder{
+    color: var(--text-color);
+}
 body{
     background-color: var(--background-color);
     color: var(--text-color);
@@ -53,6 +56,10 @@ body{
 }
 body > *{
     transition: 250ms;
+}
+option{
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 #darkModeToggle{
     z-index: 999;
@@ -102,27 +109,30 @@ label{
     padding: .2rem 0;
     width: 100%;
     font-size: .95rem;
+    font-weight: 400;
 }
 input, select{
     padding: .4rem;
     width: 100%;
-    margin: .4rem 0;
+    margin: .8rem 0 .4rem;
+    background-color: transparent;
+    border: 1px solid var(--input-bg-color);
     border-radius: .3rem;
-    background-color: var(--input-bg-color);
+    color: var(--text-color);
 }
 #calcular{
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 .5rem;
     padding: .75rem 0;
     border-radius: .3rem;
-    background-color: var(--button-color);
-    border: var(--button-color) 1px solid;
+    background-color: transparent;
+    border: var(--button-color) 2px solid;
     color: var(--button-text-color);
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
     transition: 350ms;
 }
 #calcular:hover{
-    background-color:var(--button-color-hover);
+    background-color:var(--button-color);
     color: var(--button-text-hover-color);
     cursor: pointer;
 }
