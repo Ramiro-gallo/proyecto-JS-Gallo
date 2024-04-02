@@ -54,7 +54,6 @@ body{
     background-color: var(--background-color);
     color: var(--text-color);
     transition: .75s;
-    width: 100vw;
     height: 100vh;
 }
 body > *{
@@ -169,4 +168,8 @@ input, select{
 #results {
     visibility: hidden;
     font-weight: 400;
+    border: 1px solid var(--input-bg-color);
+    border-radius: .3rem;
+    box-shadow: var(--box-shadow);
+    padding: .4rem;
 }
